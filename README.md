@@ -2,6 +2,10 @@
 
 A vibrant React.js web application that uses TensorFlow.js's Toxicity model to detect toxic content in user-submitted text.
 
+> If you find this project helpful or interesting, please consider giving it a ⭐ on GitHub! Suggestions and improvements are always welcome 🙌
+
+> Check out the working example here - https://tensorflow-react-toxicity-checker.vercel.app
+
 ## 🚀 Features
 
 - Built with React and Vite for fast performance  
