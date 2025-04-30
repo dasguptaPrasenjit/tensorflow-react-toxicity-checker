@@ -1,0 +1,93 @@
+/* src/App.css */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #ffe3ec, #d0c4f7, #b3d1ff);
+  min-height: 100vh;
+}
+
+.app-container {
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.content-box {
+  background-color: #ffffff;
+  border-radius: 20px;
+  padding: 2rem;
+  max-width: 700px;
+  width: 100%;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.title {
+  text-align: center;
+  font-size: 2rem;
+  color: #5c2d91;
+  margin-bottom: 1.5rem;
+}
+
+.input-area {
+  width: 95%;
+  padding: 1rem;
+  border: 2px solid #b794f4;
+  border-radius: 12px;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  resize: vertical;
+}
+
+.analyze-button {
+  background-color: #7c3aed;
+  color: white;
+  font-weight: 600;
+  padding: 0.6rem 1.5rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.analyze-button:hover {
+  background-color: #5b21b6;
+}
+
+.analyze-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.results-box {
+  margin-top: 2rem;
+}
+
+.results-title {
+  font-size: 1.25rem;
+  color: #6b21a8;
+  margin-bottom: 1rem;
+}
+
+.results-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+}
+
+.results-table th,
+.results-table td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+}
+
+.toxic {
+  color: #dc2626;
+  font-weight: 700;
+}
+
+.non-toxic {
+  color: #059669;
+  font-weight: 700;
+}
