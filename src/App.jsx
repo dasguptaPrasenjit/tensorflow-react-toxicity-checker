@@ -1,14 +1,14 @@
 // src/App.jsx
-import React, { useState, useEffect } from 'react';
-import * as toxicity from '@tensorflow-models/toxicity';
-import '@tensorflow/tfjs';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import * as toxicity from "@tensorflow-models/toxicity";
+import "@tensorflow/tfjs";
+import "./App.css";
 
 const threshold = 0.5;
 
 export default function App() {
   const [model, setModel] = useState(null);
-  const [inputText, setInputText] = useState('');
+  const [inputText, setInputText] = useState("");
   const [predictions, setPredictions] = useState([]);
   const [loading, setLoading] = useState(false);
 
@@ -17,7 +17,7 @@ export default function App() {
   }, []);
 
   const handleCheck = async () => {
-    if (model && inputText.trim() !== '') {
+    if (model && inputText.trim() !== "") {
       setLoading(true);
       const results = await model.classify([inputText]);
       setPredictions(results);
@@ -28,7 +28,23 @@ export default function App() {
   return (
     <div className="app-container">
       <div className="content-box">
-        <h1 className="title">🌈 Toxicity Checker</h1>
+        <div className="header-row">
+          <h1 className="title">🌈 Toxicity Checker</h1>
+          <a
+            href="https://github.com/dasguptaPrasenjit/tensorflow-react-toxicity-checker"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="github-link"
+            aria-label="View on GitHub"
+          >
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
+              alt="GitHub"
+              className="github-icon"
+            />
+            <span className="github-text">Check on GitHub</span>
+          </a>
+        </div>
         <textarea
           rows="4"
           className="input-area"
@@ -41,7 +57,7 @@ export default function App() {
           disabled={!model || loading}
           className="analyze-button"
         >
-          {loading ? 'Analyzing...' : 'Analyze'}
+          {loading ? "Analyzing..." : "Analyze"}
         </button>
 
         {predictions.length > 0 && (
@@ -59,10 +75,14 @@ export default function App() {
                 {predictions.map((pred) => (
                   <tr key={pred.label}>
                     <td>{pred.label}</td>
-                    <td className={pred.results[0].match ? 'toxic' : 'non-toxic'}>
-                      {pred.results[0].match ? 'Yes' : 'No'}
+                    <td
+                      className={pred.results[0].match ? "toxic" : "non-toxic"}
+                    >
+                      {pred.results[0].match ? "Yes" : "No"}
                     </td>
-                    <td>{(pred.results[0].probabilities[1] * 100).toFixed(2)}%</td>
+                    <td>
+                      {(pred.results[0].probabilities[1] * 100).toFixed(2)}%
+                    </td>
                   </tr>
                 ))}
               </tbody>
