@@ -91,3 +91,33 @@ body {
   color: #059669;
   font-weight: 700;
 }
+
+.header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.github-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+}
+
+.github-icon {
+  width: 28px;
+  height: 28px;
+  transition: transform 0.2s;
+}
+
+.github-icon:hover {
+  transform: scale(1.1);
+}
+
+.github-text {
+  font-size: 0.95rem;
+}
+
